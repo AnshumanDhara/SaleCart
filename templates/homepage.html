@@ -1,0 +1,123 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/homepage.css' %}">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <div class = "navbar">
+        <div class = "row w-100">
+            <div class = "navbar_l col-5">
+                <div class="row w-100">
+                    <div class="col">
+                        <a href="{% url 'homepage' %}"><img src="{% static 'images/logo.png' %}" alt="logo"></a>
+                    </div>
+                </div>
+            </div>
+    
+            <div class = "navbar_ r col-7">
+    
+                <div class="row">
+                    <div class="col-md-8">
+                        <form method = "POST">
+                            {% csrf_token %}
+                            <input class="w-100" name="Search" placeholder="Search"></input>
+                        </form>
+                    </div>
+                    <div class="col-md-4">
+                        <a href="{% url 'login' %}" class="btn btn-light w-100">Login</a>
+                        <div class = "notification-message">{{message}}</div>
+                    </div>                
+                </div>
+    
+                <div class="row">
+                    <div class="col">
+                        <a class="btn" href="{% url 'homepage' %}">Home</a>
+                    </div>
+                    <div class="col">
+                        <div class="btn-group">
+                            <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Category
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="{% url 'category1' %}">Category 1</a></li>
+                                <li><a class="dropdown-item" href="{% url 'category2' %}">Category 2</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="btn-group">
+                            <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Filter
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Filter 1</a></li>
+                                <li><a class="dropdown-item" href="#">Filter 2</a></li>
+                                <li><a class="dropdown-item" href="#">Filter 3</a></li>
+                                <li><a class="dropdown-item" href="#">Filter 4</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <a class="btn" href="{% url 'cart' %}">Cart</a>
+                    </div>
+                </div>         
+            </div>
+        </div>
+        
+
+    </div>
+
+    <div class = "advertisment">
+        Advertisment
+    </div>
+    {% comment %} <div class = "row">
+        <div id="carouselExampleIndicators" class="carousel slide">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/Events/img23/Jupiter23/Homepage/v2/KSD_Hero_PC_EN_2X._CB577635916_.jpg" class="d-block img-fluid" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img23/Wireless/OnePlus/Jupiter23/GW/NordCE3Lite/4thOct/D97529701_IN_WLD_Jupiter23_OnePlus_Nord_CE_3_Lite_PC_Hero_3000x1200._CB577666550_.jpg" class="d-block img-fluid" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img21/new/hero/2_DesktopHero_3000x1200._CB577038747_.jpg" class="d-block img-fluid" alt="...">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+    </div> {% endcomment %}
+    <div class = "offers">
+        Offers
+    </div>
+    <div class = "categories">
+        Categories
+    </div>
+    <div class = "footer">
+        Footer
+    </div>
+</body>
+</html>

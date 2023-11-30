@@ -1,0 +1,8 @@
+body {
+    background-color: #E9DFC2;
+}
+
+.notification-message {
+    color: red;
+    font-weight: bold;
+}
